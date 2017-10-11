@@ -1,7 +1,9 @@
 language: ruby
 rvm: 
     - 2.4
-script:
+install:
     - bundle install --without production
+before_script:
     - rails db:migrate
+script:
     - rails test
